@@ -1,5 +1,8 @@
 $(document).ready(function(){
-  // call functions here
-});
 
-// define functions here
+  $('form:first').on('submit', function(e){
+    let newItem = $('#item').val()
+    $('#list ol').append(`<li>${newItem}</li>`)
+    e.preventDefault()
+  })
+});
