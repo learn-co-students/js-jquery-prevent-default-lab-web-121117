@@ -1,5 +1,13 @@
 $(document).ready(function(){
-  // call functions here
+  submitForm()
 });
 
-// define functions here
+function submitForm() {
+  $('form').on("submit", function(event) {
+    event.preventDefault()
+    const newItem = document.createElement("li")
+    newItem.innerHTML = $("#item").val()
+    $('ol').append(newItem)
+    $("#item").val("")
+  })
+}
