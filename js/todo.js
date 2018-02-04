@@ -1,5 +1,14 @@
 $(document).ready(function(){
   // call functions here
+  addTask();
+
 });
 
-// define functions here
+function addTask() {
+  $('form').on('submit', function(event){
+    event.preventDefault()
+    const newItem = $('#item').val()
+    $('#list ol').append(`<li>${newItem}</li>`)
+    $('#item').val("");
+  })
+}
